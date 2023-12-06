@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#hero {
+    width: 100%;
+    height: 110vh;
+    background-size: cover;
+    padding: 0 40px;
+}
+
+#hero, #footer {
+  background-image: url("BG-.1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+}
+
+.logo { 
+  height: 55px;
+}
+.footlogo { 
+  height: 50px;
+  position: relative;
+}
+.h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.txt1 {
+  font-family: montserrat;
+  text-decoration: none;
+}
+.txt2 {
+  font-family: montserrat;
+  color: white;
+  text-align: center;
+  align-items: center;
+} 
+.lead {
+  font-family: Poppins;
+ 
+}
+
+.navbar-nav li a {     
+  color: white !important;
+  word-spacing: 3px;
+
+}
+.navbar-nav li a:hover {     
+  color: black !important;
+  padding-top: 4px;
+}
+
+.hero,h1,h5 {
+    color: #fff;
+}
+
+#aboutme, #projects,#education {
+  background-image: linear-gradient(	#000,#343434	);
+  padding-bottom: 100px;
+}
+
+.img2 {
+  margin: bottom;
+  position: relative;
+  height: 200px;
+  transition: 0.3s;
+
+}
+.img2:hover {
+  transform: scale(1.1); 
+  opacity: 1;
+  transition: 0.3s;
+
+}
+  card-img {
+  box-shadow: 10px 15px 19px;
+}
+.navbar {
+  box-shadow: 5px 10px 10px 0px;
+  background-color: white;
+
+}
+a:link {
+  color:white;
+}
+a:visited {
+  color:white; 
+}
+.container-fluid   {
+  padding: 70px;
+}
+.bi {
+  color: black;
+  font-size: x-large;
+  transition: 0.4s;
+}
+.bi:hover {
+  font-size: xx-large;
+  transition: 0.4s;
+
+}
+
+/*education*/
+
+#education {
+  background-color: aliceblue;
+}
+.school-img {
+  height: 600px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+
+}
+.educ-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.educ-item img,
+.educ-item .educ-overlay {
+  transition: all 0.4s ease;
+}
+
+.educ-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:  rgba(17, 36, 90, 0.5);
+  padding: 60px;
+  opacity: 0;
+}
+
+.educ-overlay h2,
+.educ-overlay h4,
+.educ-overlay h5 {
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.educ-item:hover .educ-overlay {
+  opacity: 1;
+}
+
+.educ-item:hover img {
+  transform: scale(1.1);
+}
+
+.nav li a {     
+  color: white !important;
+  font-family: montserrat;
+  
+
+}
+.nav li a:hover {     
+  color: #FFBF00 !important;
+
+}
+.txt3 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.btn {
+  border-radius: 30px;
+  transition: 0.4s;
+
+}
+.btn:hover {
+  transition: 0.4s;
+  transform: scaleY(0.7);
+}
+
+
+/*Tago muna natin*/
+
+/* <a class="btn btn-get-started scrollto" href="#aboutme">
+<i class="fa-solid fa-angles-down fa-bounce fa-xl" style="color: white;"></i>
+</a> */
+.txt3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 75px;
+
+}
+.txt4 {
+  font-family: 'Asap', sans-serif;
+  font-size: 50px;
+}
+
+
+/* START ng Animation ng Name*/
+.txt-type > .txt {
+  border-right: 0.2rem solid #777;
+  font-size: 50px;
+}
+
+@media(min-width: 1200px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media(max-width: 800px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+@media(max-width: 500px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+/*END ng Animation ng Name*/
+
+
+

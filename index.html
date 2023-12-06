@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title> DM | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="dianaMillomeda.css" />
+
+    <link rel="icon" type="image/x-icon" href="Logo1234.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+
+
+
+
+    <!--Google Fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&amp;family=Montserrat&amp;display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Roboto+Mono:wght@200&family=Rubik:ital,wght@0,300;0,400;0,800;1,300;1,800&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,700;0,800;0,900;1,700;1,900&family=Poppins:ital,wght@0,700;0,800;0,900;1,200;1,600;1,700;1,800;1,900&family=Roboto+Mono:wght@200&family=Roboto:ital,wght@1,900&family=Rubik:ital,wght@0,300;0,400;0,800;1,300;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- JS code -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- JS para sa animation ng name -->
+    <script>
+        class TypeWriter {
+            constructor(txtElement, words, wait = 3000) {
+                this.txtElement = txtElement;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 8);
+                this.type();
+                this.isDeleting = false;
+            }
+
+            type() {
+                // Current index of word
+                const current = this.wordIndex % this.words.length;
+                // Get full text of current word
+                const fullTxt = this.words[current];
+
+                // Check if deleting
+                if (this.isDeleting) {
+                    // Remove char
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    // Add char
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                // Insert txt into element
+                this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+                // change color for data-text
+                this.txtElement.innerHTML = `<span class="txt" style="color: #fcba03;">${this.txt}</span>`;
+
+                // Initial Type Speed
+                let typeSpeed = 100;
+
+                if (this.isDeleting) {
+                    typeSpeed /= 2;
+                }
+
+                // If word is complete
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    // Make pause at end
+                    typeSpeed = this.wait;
+                    // Set delete to true
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    // Move to next word
+                    this.wordIndex++;
+                    // Pause before start typing
+                    typeSpeed = 300;
+                }
+
+                setTimeout(() => this.type(), typeSpeed);
+            }
+        }
+
+        // Init On DOM Load
+        document.addEventListener('DOMContentLoaded', init);
+
+        // Init App
+        function init() {
+            const txtElement = document.querySelector('.txt-type');
+            const words = JSON.parse(txtElement.getAttribute('data-words'));
+            const wait = txtElement.getAttribute('data-wait');
+            // Init TypeWriter
+            new TypeWriter(txtElement, words, wait);
+        }
+    </script>
+
+</head>
+
+<body>
+    <section id="hero" class="d-flex flex-column align-items-center justify-content-center txt1">
+        <a href="#aboutme"><img src="img2.png" class="img img2 img-fluid rounded-circle"></a><br>
+        <h1 class="txt1">I'm <span class="txt-type text-warning" data-wait="3000"
+            data-words='["Diana Millomeda!", "A.K.A", "DM", "And All I Want for Christmas is YOU!!"]'></span></h1>
+        <h1 class="txt3">An Aspiring <span class="text-warning">Web Developer</span></h1>    
+        
+            <br>
+        <div class="container justify-content-center align-items-center d-flex flex-column">
+            <div class="row">
+
+
+                <div class="col">
+                    <button type="button" class="btn btn-outline-warning"><a
+                            href="https://www.facebook.com/diana.millomeda" target="_blank">
+                            <i class="b1234 bi-facebook text-white"></i>
+                        </a></button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-warning"><a href="https://www.instagram.com/dm_0t_t0/"
+                            target="_blank">
+                            <i class="bi-instagram text-white"></i>
+                        </a></button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-warning"><a href="https://twitter.com/Dna_M88"
+                            target="_blank">
+                            <i class="bi-twitter-x text-white"></i>
+                        </a></button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-warning"><a href="https://www.tiktok.com/@ot_dm_to"
+                            target="_blank">
+                            <i class="bi-tiktok text-white"></i>
+                        </a></button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+    <!--NAVBARRRR-->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">
+                <img src="Logo1234.png" class="img img-fluid logo rounded"><span class="txt1 text-white fw-bold ps-2">
+                    STUDIO
+                    WEB</span></a>
+
+            <!-- Toggle Bar-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--LIST-->
+
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav ms-auto txt1 align-items-center" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" data-bs-toggle="nav" href="#hero" aria-selected="true"
+                            role="tab">Home</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="nav" href="#aboutme" aria-selected="false" role="tab">About
+                            Me</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="nav" href="#projects" aria-selected="false"
+                            role="tab">Projects</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="nav" href="#Education" aria-selected="false"
+                            role="tab">Education</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="nav" href="#Contacts" aria-selected="false"
+                            role="tab">Contacts</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ABOUT ME -->
+
+    <section id="aboutme" class="d-flex">
+        <div class="container mt-5">
+            <br><br><br>
+            <div class="row justify-content-center">
+                <div class="container d-flex flex-column align-items-center">
+                    <p class="h1 txt4 text-center my-5 mt-5 fw-bold text-warning">ABOUT ME</p>
+                    <hr color="white" width="90">
+
+                </div>
+                <div class="col-4">
+                    <div class="card card-img">
+                        <div class="card-body img-area m-0">
+                        <img class="img img-fluid rounded-5 " src="image1.jpg" alt="DM">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="card card-img">
+                        <div class="card-body">
+                            <h1 class="text-dark txt1 text-center">Diana Vargas Millomeda</h1>
+                            <p class="text-dark my-3 txt1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; My nickname is DM and I am currently a first-year college
+                                student in Bachelor of Science majoring in Information System at Kolehiyong Lungsod ng
+                                Dasmariñas situated in Burol 1, Dasmariñas City, Cavite. I am aspiring to be a Web
+                                Developer after graduating this course. I am 20 years old and I realy
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects-->
+
+    <section id="projects" class="d-flex">
+        <div class="container-fluid mt-5">
+            <br><br><br>
+            <div class="row">
+                <div class="align-items-center container">
+                    <p class="h1 txt4 text-center my-5 mt-5 fw-bold text-warning">MY PORTFOLIO</p>
+                    <hr color="#4CAF50" width="90">
+
+
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <img src="image3.png" alt="1stProject" class="img-fluid img-bottom">
+                                        <div class="carousel-caption my-2">
+                                            <div class="text-center">
+                                                <a href="https://dm-to.000webhostapp.com/Act1.html" target="_blank">
+                                                    <button class="btn btn-outline-warning fw-bold txt2 mt-1">1ST
+                                                        PROJECT</button>
+                                                </a>
+                                                <p class="my-2 txt2">This project is mostly about me, my hobbies,
+                                                    educational background, favorites, and personal information.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <div class="img-area m-1">
+                                            <img src="image1.png" alt="2ndProject" class="img-fluid img-bottom">
+                                        </div>
+                                        <div class="carousel-caption my-2">
+                                            <div class="text-center">
+                                                <a href="https://dm-to.000webhostapp.com/index.html" target="_blank">
+                                                    <button class="btn btn-outline-warning txt2 fw-bold">2ND
+                                                        PROJECT</button>
+                                                </a>
+                                                <p class="my-2 txt2">My second project is also mostly about me but
+                                                    one project
+                                                    contains my semestral
+                                                    schedule.</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="img-area m-1">
+                                            <img src="image2.png" alt="3rdProject" class="img-fluid img-bottom ">
+                                        </div>
+                                        <div class="carousel-caption my-2">
+                                            <div class="text-center">
+                                                <a href="https://ot-dm-to.github.io/" target="_blank">
+                                                    <button class="btn btn-outline-warning txt2 fw-bold">3RD
+                                                        PROJECT</button>
+                                                </a>
+                                                <p class="my-2 txt2">My last project shows the step by step process
+                                                    on how to make scrambled eggs.</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Background -->
+
+    <section id="education" class="d-flex">
+        <div class="container mt-5">
+            <br><br><br>
+            <div class="row">
+                <div class="container d-flex flex-column align-items-center">
+                    <p class="h1 txt4 text-center my-5 mt-5 fw-bold text-warning">EDUCATION</p>
+                </div>
+
+                <ul class="nav nav-tab justify-content-center" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active rounded-5" data-bs-toggle="tab" href="#school1" aria-selected="true"
+                            role="tab">Tertiary</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link rounded-5" data-bs-toggle="tab" href="#school2" aria-selected="false"
+                            role="tab">Secondary</a>
+                    </li>
+                </ul>
+                <br><br><br><br>
+
+
+                <!--Tertiary  -->
+
+                <div class="tab-content bg-white align-items-center justify-content-center">
+                    <div id="school1" class="container tab-pane active show " role="tabpanel">
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <div class="educ-item">
+                                    <div class="educ-img">
+                                        <img src="KLD.png" alt="kld" class="img img-fluid school-img">
+                                        <div class="educ-overlay">
+                                            <h2>Kolehiyo ng
+                                                Lungsod ng Dasmarinas</h2>
+                                            <h4>Bachelor of
+                                                Science in Information Systems</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary -->
+
+            <div class="tab-content bg-white">
+                <div id="school2" class="container tab-pane fade" role="tabpanel">
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="educ-item">
+                                <div class="educ-img">
+                                    <img src="PNHS.png" alt="gmaci" class="img img-fluid school-img">
+                                    <div class="educ-overlay">
+                                        <h2>Paliparan National High School</h2>
+                                        <h4>Computer, System, Servicing (CSS) </h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="educ-item">
+                                <div class="educ-img">
+                                    <img src="P3HS.png" alt="ses" class="img img-fluid school-img ">
+                                    <div class="educ-overlay">
+                                        <h2>Paliparan III Senior High School</h2>
+                                        <h4>Science, Technology, Engineering and Mathematics (STEM)</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <br><br>
+
+    <!-- Footer -->
+
+    <section id="footer" class="d-flex flex-column align-items-center justify-content-center txt1  sticky-bottom">
+
+        <div class="container-fl">
+            <div class="row py-3 mx-3 mx-md-0">
+                <div class="col-12 text-center mt-2">
+                    <p class="footlogo text-light text-decoration-none" href=""><img class="me-1 my-auto"
+                            src="Logo1234.png" width="45pt"><span class="">DM STUDIO WEB</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class=" cond-flex flex-column align-items-center justify-content-center txt1">
+            <div class="row text-center icons mb-4">
+                <div class="col ps-0">
+                    <button type="button" class="btn btn-outline-warning"><a
+                            href="https://www.facebook.com/diana.millomeda" target="_blank">
+                            <i class="b1234 bi-facebook text-white"></i>
+                        </a></button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-warning"><a href="https://www.instagram.com/dm_0t_t0/"
+                            target="_blank">
+                            <i class="b1234 bi-instagram text-white"></i>
+                        </a></button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-warning"><a href="https://twitter.com/Dna_M88"
+                            target="_blank">
+                            <i class="b1234 bi-twitter-x text-white"></i>
+                        </a></button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-warning"><a href="https://www.tiktok.com/@ot_dm_to"
+                            target="_blank">
+                            <i class="b1234 bi-tiktok text-white"></i>
+                        </a></button>
+
+                </div>
+
+            </div>
+            <div class="col-fluid">
+                <p class="txt1 text-white"> <i class="fa-regular fa-copyright"></i> DM 2023. All rights reserved.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
